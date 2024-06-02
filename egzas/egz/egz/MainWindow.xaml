@@ -1,0 +1,61 @@
+﻿<Window x:Class="SlaptazodzioAtkurimas.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Slaptažodžio atstatymas naudojant „brute force“ ataką " Height="359" Width="640">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="74*"/>
+            <ColumnDefinition Width="451*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.ColumnSpan="2" Margin="17,0,-17,0">
+            <Grid>
+                <TextBox Name="SlaptazodzioTekstoLaukas" Width="200" Margin="10" VerticalAlignment="Center"/>
+                <TextBlock x:Name="SlaptazodzioVieta" 
+                           IsHitTestVisible="False" 
+                           Foreground="Black" 
+                           Margin="100,0,0,0" 
+                           VerticalAlignment="Center" FontFamily="Times New Roman" FontSize="14" ><Run Text="Įveskite slaptažodį"/><Run Language="lt-lt" Text=":"/></TextBlock>
+            </Grid>
+            <Button Name="uzkoduotiSlaptazodiMygtukas" Content="Užkoduoti slaptažodį" Width="200" Margin="10" Click="uzkoduotiSlaptazodiMygtukas_Click" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Times New Roman" FontSize="14" FontWeight="Bold" FontStyle="Italic"/>
+            <TextBlock x:Name="SlaptazodzioVieta_Copy" 
+                IsHitTestVisible="False" 
+                Foreground="Black" 
+                FontFamily="Times New Roman" FontSize="14" Width="444" Text="Įvesto slaptažodžio užkodavimas:" Height="19" RenderTransformOrigin="0.5,0.5" >
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="1"/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0.001"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBox x:Name="UzkoduotoSlaptazodzioTekstas" Width="335" IsReadOnly="True" TextChanged="UzkoduotoSlaptazodzioTekstas_TextChanged" Margin="0,14,0,0" RenderTransformOrigin="0.503,0.489" Height="33">
+                <TextBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="1" ScaleY="1"/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0.009"/>
+                        <TranslateTransform X="-1.895" Y="0.638"/>
+                    </TransformGroup>
+                </TextBox.RenderTransform>
+            </TextBox>
+            <Button Name="atkoduotoslaptazodziomygtukas" Content="Atkurti slaptažodį" Width="200" Margin="15,44,10,10" Click="atkoduotoslaptazodziomygtukas_Click" FontFamily="Times New Roman" FontSize="14" FontWeight="Bold" FontStyle="Italic"/>
+            <TextBox Name="AtkoduotoSlaptazodzioTekstas" Width="200" Margin="10,21,10,10" IsReadOnly="True"/>
+            <TextBox Name="PraleistasLaikas" Width="200" Margin="10,10,10,10" IsReadOnly="True"/>
+            <TextBlock x:Name="SlaptazodzioVieta_Copy1" 
+                IsHitTestVisible="False" 
+                Foreground="Black" 
+                FontFamily="Times New Roman" FontSize="14" Width="540" Margin="0,-113,-56,0" Height="19" ><Run Text="J"/><Run Language="lt-lt" Text="ūsų įvestas slaptažodis:"/></TextBlock>
+            <TextBlock x:Name="SlaptazodzioVieta_Copy3" 
+                IsHitTestVisible="False" 
+                Foreground="Black" 
+                FontFamily="Times New Roman" FontSize="14" Width="540" Height="19" Margin="0,-36,-32,0" Text="Programos atlikimo laikas:" />
+
+        </StackPanel>
+        <TextBlock x:Name="SlaptazodzioVieta_Copy2" 
+            IsHitTestVisible="False" 
+            Foreground="Black" 
+            FontFamily="Times New Roman" FontSize="14" Grid.ColumnSpan="2" Margin="78,278,22,85" ><Run Text="J"/><Run Language="lt-lt" Text="ūsų įvestas slaptažodis:"/></TextBlock>
+    </Grid>
+</Window>
